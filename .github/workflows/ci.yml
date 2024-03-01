@@ -29,7 +29,7 @@ jobs:
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
 
-    - name: Pring pytest-ranking cache
+    - name: Print pytest-ranking cache
       if: steps.save-pytest-ranking-cache.outputs.cache-hit == 'true'
       run: cat ~/.pytest_cache/v/pytest_ranking_data/last_durations
 
