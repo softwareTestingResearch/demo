@@ -20,3 +20,5 @@ result: cache not found in second time, qtf fails
 
 
 ## check if action/cache can pass sample.txt
+
+cache save success: https://github.com/softwareTestingResearch/demo/commit/11916563538f13cb03edfcd0dedbedd7de8964c2
