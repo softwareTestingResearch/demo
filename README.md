@@ -47,3 +47,10 @@ Tips:
 - update a cache: https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
 - auto-remove unaccessed cache in the past 7 days: https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
 
+
+### successfully update cache
+
+the num runs since fail is updated to 4
+
+commit: 
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8105987090/job/22155212923
