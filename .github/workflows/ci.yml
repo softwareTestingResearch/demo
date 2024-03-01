@@ -23,17 +23,15 @@ jobs:
 
     # - name: Restore pytest-ranking cache
     #   id: restore-pytest-ranking-cache
+    #   if: ${{ always() }
     #   uses: actions/cache/restore@v4
     #   with:
     #     path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-    #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
-    #     restore-keys: |
-    #       pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
-    #     save-always: true
+    #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
 
     - name: Save pytest-ranking cache
       # continue-on-error: true
-      if: ${{ always() }}
+      if: always()
       id: save-pytest-ranking-cache
       uses: actions/cache@v4
       with:
@@ -46,18 +44,17 @@ jobs:
       run: pytest -v --rank --rank-weight=1-0-0
     - name: Print pytest cache
       # continue-on-error: true
-      if: ${{ always() }}
+      if: always()
       run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
 
 
-    # - name: Save Primes
-    #   id: cache-primes-save
+    # - name: Save pytest-ranking cache
+    #   id: save-pytest-ranking-cache
+    #   if: always()
     #   uses: actions/cache/save@v4
     #   with:
     #     path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
     #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
-    #     restore-keys: |
-    #       pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
     #     save-always: true
 
     # - name: Print pytest-ranking cache
