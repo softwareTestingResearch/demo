@@ -20,6 +20,11 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Install pytest-ranking repo
+      run: |
+        git clone https://github.com/softwareTestingResearch/pytest-ranking.git
+        cd pytest-ranking
+        pip install .
 
     - name: Restore pytest-ranking cache
       id: restore-pytest-ranking-cache
