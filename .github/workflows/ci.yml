@@ -40,9 +40,13 @@ jobs:
     #     restore-keys: |
     #       pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
     #     save-always: true
+    - name: Print restored pytest cache
+      # continue-on-error: true
+      if: always()
+      run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
-    - name: Print pytest cache
+    - name: Print saved pytest cache
       # continue-on-error: true
       if: always()
       run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
