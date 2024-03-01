@@ -4,6 +4,9 @@ Tips:
 - breaking cache action into two parts: https://github.com/actions/cache?tab=readme-ov-file#using-a-combination-of-restore-and-save-actions
 
 
+Notes:
+- if two commits are too close to each other, e.g., A then B. then running tcp for B won't necessarily be using A's cache because by the time 
+B's workflow starts, A might not finish yet.
 
 ## checking if qtf works without passing pytest cache across workflow 
 
@@ -113,6 +116,9 @@ commit: https://github.com/wnfewwfwefwef/demo/commit/dff4301234acce6b03640894418
 run: https://github.com/wnfewwfwefwef/demo/actions/runs/8114818332/job/22181324945
 result: yes, it runs workflow when 1 commit is sync
 
+when a sync fork has 2 commits, workflow only runs for the latest one
+commit: https://github.com/wnfewwfwefwef/demo/commit/59f5b25eeb3fd65489560a92945267519b51d117
 
 
 ## check if change based technique works
+

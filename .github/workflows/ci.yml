@@ -30,12 +30,12 @@ jobs:
         key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
 
     - name: Print restored pytest cache
-      if: always()
+      if: always() && steps.restore-pytest-ranking-cache.outputs.cache-hit == 'true'
       run: |
         cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/last_durations
         cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
     - name: Run tests
-      run: pytest -v --rank --rank-weight=1-0-0
+      run: pytest -v --rank --rank-weight=0-0-1
     - name: Print saved pytest cache
       if: always()
       run: |
