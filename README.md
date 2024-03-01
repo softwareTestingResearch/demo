@@ -82,3 +82,13 @@ commit: https://github.com/softwareTestingResearch/demo/commit/18a5e794f6b19b026
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8106358852/job/22156147320
 
 result: works, cache is saved even if tests failed, and cache from nearest prev workflow is passed to the current workflow
+
+
+## check if weight 0-1-0 runs recently failed test first
+
+commit: https://github.com/softwareTestingResearch/demo/commit/e8c7e1fe3eb838b00250c5a6b7caf8e3ba5312da
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8106385139/job/22156219730
+result: yes
+
+## check if qtf works
+
