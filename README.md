@@ -1,3 +1,10 @@
+Tips:
+- update a cache: https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
+- auto-remove unaccessed cache in the past 7 days: https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
+- breaking cache action into two parts: https://github.com/actions/cache?tab=readme-ov-file#using-a-combination-of-restore-and-save-actions
+
+
+
 ## checking if qtf works without passing pytest cache across workflow 
 
 commit: https://github.com/softwareTestingResearch/demo/commit/dd1011700bb24e0a31c24331e3ff0245e54236f4
@@ -42,10 +49,6 @@ run: https://github.com/softwareTestingResearch/demo/actions/runs/8105892884/job
 ## always save pytest cache
 commit: https://github.com/softwareTestingResearch/demo/commit/f38d058ed417704aa02f3d10ac2de6fc91763a0a
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105909754/job/22154993686
-
-Tips:
-- update a cache: https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
-- auto-remove unaccessed cache in the past 7 days: https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
 
 
 result: successfully update cache, the num runs since fail is updated to 4, as below
@@ -101,4 +104,8 @@ round 2
 commit: https://github.com/softwareTestingResearch/demo/commit/4b679cead557fbe4af1c2946a5f818f03d701a9c
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8106594149/job/22156769968
 
-result: yes, check test_random.py
+result: yes, check test result for test_random.py
+
+
+## check if workflow run trigger afetr sync fork to a forked repo
+
