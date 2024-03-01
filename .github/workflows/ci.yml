@@ -48,7 +48,7 @@ jobs:
         save-always: true
 
     - name: Pring Prime Numbers
-      if: steps.cache-primes.outputs.cache-hit != 'true'
+      if: steps.cache-primes.outputs.cache-hit == 'true'
       run: cat ~/sample.txt
 
     - name: Generate Prime Numbers
