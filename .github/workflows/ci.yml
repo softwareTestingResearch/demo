@@ -29,25 +29,12 @@ jobs:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
         key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
 
-    # - name: Save pytest-ranking cache
-    #   # continue-on-error: true
-    #   if: always()
-    #   id: save-pytest-ranking-cache
-    #   uses: actions/cache@v4
-    #   with:
-    #     path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-    #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
-    #     restore-keys: |
-    #       pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
-    #     save-always: true
     - name: Print restored pytest cache
-      # continue-on-error: true
       if: always()
       run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
     - name: Print saved pytest cache
-      # continue-on-error: true
       if: always()
       run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
 
@@ -60,22 +47,3 @@ jobs:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
         key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
 
-    # - name: Print pytest-ranking cache
-    #   if: steps.save-pytest-cache.outputs.cache-hit == 'true'
-    #   run: cat ~/.pytest_cache/v/pytest_ranking_data/last_durations
-
-    # - name: Cache Primes
-    #   id: cache-primes
-    #   uses: actions/cache@v4
-    #   with:
-    #     path: ~/sample.txt
-    #     key: ${{ runner.os }}-primes
-    #     save-always: true
-
-    # - name: Pring Prime Numbers
-    #   if: steps.cache-primes.outputs.cache-hit == 'true'
-    #   run: cat ~/sample.txt
-
-    # - name: Generate Prime Numbers
-    #   # if: steps.cache-primes.outputs.cache-hit != 'true'
-    #   run: echo 'apple' >> ~/sample.txt

@@ -78,7 +78,7 @@ commit: https://github.com/softwareTestingResearch/demo/commit/9d7dd3fbe8c11cfc2
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8106340982
 
 round 2
-commit: 
-run:
+commit: https://github.com/softwareTestingResearch/demo/commit/18a5e794f6b19b02631360d0946df5dc75eb75ba
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8106358852/job/22156147320
 
-result: works
+result: works, cache is saved even if tests failed, and cache from nearest prev workflow is passed to the current workflow
