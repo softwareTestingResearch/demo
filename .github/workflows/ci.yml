@@ -48,4 +48,4 @@ jobs:
 
     - name: Generate Prime Numbers
       # if: steps.cache-primes.outputs.cache-hit != 'true'
-      run: echo 'apple' >> sample.txt
+      run: echo 'apple' >> ~/sample.txt
