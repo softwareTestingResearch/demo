@@ -90,5 +90,3 @@ commit: https://github.com/softwareTestingResearch/demo/commit/e8c7e1fe3eb838b00
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8106385139/job/22156219730
 result: yes
 
-## check if qtf works
-
