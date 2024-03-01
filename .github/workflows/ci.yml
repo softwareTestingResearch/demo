@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: ["ubuntu-latest", "windows-latest"]
         python: ["3.9", "3.10"]
 
     steps:
@@ -27,7 +28,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-        key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
+        key: pytest-ranking-cache-${{ matrix.os }}-${{ matrix.python }}
 
     - name: Print restored pytest cache
       if: always()
@@ -49,5 +50,5 @@ jobs:
       uses: actions/cache/save@v4
       with:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-        key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
+        key: pytest-ranking-cache-${{ matrix.os }}-${{ matrix.python }}-${{ github.run_id }}
 
