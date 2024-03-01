@@ -38,3 +38,8 @@ run: https://github.com/softwareTestingResearch/demo/actions/runs/8105851271/job
 ## save pytest cache
 commit: https://github.com/softwareTestingResearch/demo/commit/395718f642e0e09dc0f3d3a7cbfc7a9f0f8d4ed0
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105892884/job/22154949534
+
+## always save pytest cache
+commit: https://github.com/softwareTestingResearch/demo/commit/f38d058ed417704aa02f3d10ac2de6fc91763a0a
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8105909754/job/22154993686
+
