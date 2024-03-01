@@ -21,25 +21,25 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    # - name: Restore pytest-ranking cache
-    #   id: restore-pytest-ranking-cache
-    #   if: ${{ always() }
-    #   uses: actions/cache/restore@v4
-    #   with:
-    #     path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-    #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
-
-    - name: Save pytest-ranking cache
-      # continue-on-error: true
+    - name: Restore pytest-ranking cache
+      id: restore-pytest-ranking-cache
       if: always()
-      id: save-pytest-ranking-cache
-      uses: actions/cache@v4
+      uses: actions/cache/restore@v4
       with:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-        key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
-        restore-keys: |
-          pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
-        save-always: true
+        key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
+
+    # - name: Save pytest-ranking cache
+    #   # continue-on-error: true
+    #   if: always()
+    #   id: save-pytest-ranking-cache
+    #   uses: actions/cache@v4
+    #   with:
+    #     path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
+    #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
+    #     restore-keys: |
+    #       pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
+    #     save-always: true
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
     - name: Print pytest cache
@@ -48,14 +48,14 @@ jobs:
       run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
 
 
-    # - name: Save pytest-ranking cache
-    #   id: save-pytest-ranking-cache
-    #   if: always()
-    #   uses: actions/cache/save@v4
-    #   with:
-    #     path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-    #     key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
-    #     save-always: true
+    - name: Save pytest-ranking cache
+      id: save-pytest-ranking-cache
+      if: always()
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
+        key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
+        save-always: true
 
     # - name: Print pytest-ranking cache
     #   if: steps.save-pytest-cache.outputs.cache-hit == 'true'
