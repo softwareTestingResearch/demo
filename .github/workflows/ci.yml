@@ -24,7 +24,17 @@ jobs:
       id: setup-pytest-ranking-cache
       uses: actions/cache@v4
       with:
-        path: .pytest_cache/v/pytest_ranking_data
+        path: /.pytest_cache/v/pytest_ranking_data
         key: ${{ runner.os }}-${{ matrix.python }}-pytest-ranking-cache
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
+    
+
+    - name: Generate sample.txt
+      run: echo 'this is an apple' >> /sample.txt
+    - name: Cache sample.txt
+    id: cache-sample-cache
+    uses: action/cache@v4
+      with:
+        path: /sample.txt
+        key: ${{ runner.os }}-${{ matrix.python }}-sample
