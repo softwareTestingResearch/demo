@@ -30,3 +30,7 @@ success commit: https://github.com/softwareTestingResearch/demo/commit/1e7fb47eb
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105814033/job/22154738939
 
 
+## print pytest cache
+
+commit: https://github.com/softwareTestingResearch/demo/commit/30b2ab7c5652ac88532f8534a2dbb931bf012f1f
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8105851271/job/22154843361
