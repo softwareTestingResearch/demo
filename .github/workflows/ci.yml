@@ -30,7 +30,7 @@ jobs:
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
     - name: Print pytest cache
-      run: cat .pytest_cache/v/nodeids
+      run: ls /home/runner/work/demo/demo/.pytest_cache
 
     # - name: Print pytest-ranking cache
     #   if: steps.save-pytest-cache.outputs.cache-hit == 'true'
