@@ -35,7 +35,7 @@ jobs:
         cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/last_durations
         cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
     - name: Run tests
-      run: pytest -v --rank --rank-weight=0-0-1
+      run: pytest -v --rank --rank-weight=1-0-0
     - name: Print saved pytest cache
       if: always()
       run: |
