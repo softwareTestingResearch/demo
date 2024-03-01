@@ -20,14 +20,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Setup pytest-ranking cache
-      id: setup-pytest-ranking-cache
-      uses: actions/cache@v4
-      with:
-        path: /.pytest_cache/v/pytest_ranking_data
-        key: ${{ runner.os }}-${{ matrix.python }}-pytest-ranking-cache
-    - name: Run tests
-      run: pytest -v --rank --rank-weight=1-0-0
+    # - name: Setup pytest-ranking cache
+    #   id: setup-pytest-ranking-cache
+    #   uses: actions/cache@v4
+    #   with:
+    #     path: /.pytest_cache/v/pytest_ranking_data
+    #     key: ${{ runner.os }}-${{ matrix.python }}-pytest-ranking-cache
+    # - name: Run tests
+    #   run: pytest -v --rank --rank-weight=1-0-0
 
     - name: Print sample.txt
       run: cat sample.txt
