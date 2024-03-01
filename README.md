@@ -48,9 +48,18 @@ Tips:
 - auto-remove unaccessed cache in the past 7 days: https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
 
 
-### successfully update cache
+result: successfully update cache, the num runs since fail is updated to 4, as below
 
-the num runs since fail is updated to 4
-
-commit: 
+commit: https://github.com/softwareTestingResearch/demo/commit/2274ab26973b5fe1f820783a823b13bcc10210e1
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105987090/job/22155212923
+
+## check if save cache proceed even if there's failed tests
+
+commit: https://github.com/softwareTestingResearch/demo/commit/661a2638190b33852c1d0760bdcf8f1d3982239a
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8106015986/job/22155284956
+
+result: failed tests prevent other steps
+
+## check if save cache proceed even if there's failed tests with continue-on-error
+
+
