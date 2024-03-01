@@ -45,6 +45,11 @@ jobs:
       with:
         path: ~/sample.txt
         key: ${{ runner.os }}-primes
+        save-always: true
+
+    - name: Pring Prime Numbers
+      if: steps.cache-primes.outputs.cache-hit != 'true'
+      run: cat ~/sample.txt
 
     - name: Generate Prime Numbers
       # if: steps.cache-primes.outputs.cache-hit != 'true'
