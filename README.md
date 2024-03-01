@@ -34,3 +34,7 @@ run: https://github.com/softwareTestingResearch/demo/actions/runs/8105814033/job
 
 commit: https://github.com/softwareTestingResearch/demo/commit/30b2ab7c5652ac88532f8534a2dbb931bf012f1f
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105851271/job/22154843361
+
+## save pytest cache
+commit: https://github.com/softwareTestingResearch/demo/commit/395718f642e0e09dc0f3d3a7cbfc7a9f0f8d4ed0
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8105892884/job/22154949534

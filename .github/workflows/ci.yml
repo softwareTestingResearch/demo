@@ -26,11 +26,12 @@ jobs:
       with:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
         key: ${{ runner.os }}-${{ matrix.python }}-pytest-ranking-cache
+        save-always: true
         # key: pytest-ranking-cache
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
-    # - name: Print pytest cache
-    #   run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
+    - name: Print pytest cache
+      run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
 
     # - name: Print pytest-ranking cache
     #   if: steps.save-pytest-cache.outputs.cache-hit == 'true'
