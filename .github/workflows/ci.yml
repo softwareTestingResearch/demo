@@ -29,13 +29,23 @@ jobs:
     # - name: Run tests
     #   run: pytest -v --rank --rank-weight=1-0-0
 
-    - name: Print sample.txt
-      run: cat sample.txt
-    - name: Generate sample.txt
-      run: echo 'this is an apple' >> /sample.txt    
-    - name: Cache sample
-      id: cache-sample
+    # - name: Generate sample.txt
+    #   run: echo 'this is an apple' >> /sample.txt    
+    # - name: Cache sample
+    #   id: cache-sample
+    #   uses: actions/cache@v4
+    #   with:
+    #     path: /sample.txt
+    #     key: ${{ runner.os }}-${{ matrix.python }}-sample
+
+
+    - name: Cache Primes
+      id: cache-primes
       uses: actions/cache@v4
       with:
-        path: /sample.txt
-        key: ${{ runner.os }}-${{ matrix.python }}-sample
+        path: prime-numbers
+        key: ${{ runner.os }}-primes
+
+    - name: Generate Prime Numbers
+      # if: steps.cache-primes.outputs.cache-hit != 'true'
+      run: echo 'apple' >> sample.txt
