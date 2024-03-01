@@ -21,9 +21,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Save pytest-ranking cache
-      continue-on-error: true
+      # continue-on-error: true
       id: save-pytest-ranking-cache
       uses: actions/cache@v4
+      if: ${{ always() }}
       with:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
         key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
@@ -33,7 +34,8 @@ jobs:
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
     - name: Print pytest cache
-      continue-on-error: true
+      # continue-on-error: true
+      if: ${{ always() }}
       run: cat ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data/num_runs_since_fail
 
     # - name: Print pytest-ranking cache
