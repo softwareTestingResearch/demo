@@ -43,3 +43,7 @@ run: https://github.com/softwareTestingResearch/demo/actions/runs/8105892884/job
 commit: https://github.com/softwareTestingResearch/demo/commit/f38d058ed417704aa02f3d10ac2de6fc91763a0a
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105909754/job/22154993686
 
+Tips:
+- update a cache: https://github.com/actions/cache/blob/main/tips-and-workarounds.md#update-a-cache
+- auto-remove unaccessed cache in the past 7 days: https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows#usage-limits-and-eviction-policy
+

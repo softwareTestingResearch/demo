@@ -25,9 +25,10 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ${{ github.workspace }}/.pytest_cache/v/pytest_ranking_data
-        key: ${{ runner.os }}-${{ matrix.python }}-pytest-ranking-cache
+        key: pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}-${{ github.run_id }}
+        restore-keys: |
+          pytest-ranking-cache-${{ runner.os }}-${{ matrix.python }}
         save-always: true
-        # key: pytest-ranking-cache
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
     - name: Print pytest cache
