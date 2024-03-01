@@ -62,4 +62,12 @@ result: failed tests prevent other steps
 
 ## check if save cache proceed even if there's failed tests with continue-on-error
 
+commit: https://github.com/softwareTestingResearch/demo/commit/5d76e4b78b95f2c09d9d040f2c39c444f2d379cb
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8106076522
+
+## check if save cache proceed even if there's failed tests with if always
+
+commit: https://github.com/softwareTestingResearch/demo/commit/a92d91877039119a1c0a6976d5826befc26b5d41
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8106125506/job/22155544341
+result: works, save cache anyway
 
