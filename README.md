@@ -23,3 +23,8 @@ result: cache not found in second time, qtf fails
 
 cache save success: https://github.com/softwareTestingResearch/demo/commit/11916563538f13cb03edfcd0dedbedd7de8964c2
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8105642215/job/22154285129
+
+## find the path for pytest cache
+
+success commit: https://github.com/softwareTestingResearch/demo/commit/1e7fb47eb1df3e6046351896ff823b9b88d3350d 
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8105814033/job/22154738939
