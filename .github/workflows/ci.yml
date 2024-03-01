@@ -28,13 +28,14 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.python }}-pytest-ranking-cache
     - name: Run tests
       run: pytest -v --rank --rank-weight=1-0-0
-    
 
+    - name: Print sample.txt
+      run: cat sample.txt
     - name: Generate sample.txt
-      run: echo 'this is an apple' >> /sample.txt
-    - name: Cache sample.txt
-      id: cache-sample-cache
-      uses: action/cache@v4
+      run: echo 'this is an apple' >> /sample.txt    
+    - name: Cache sample
+      id: cache-sample
+      uses: actions/cache@v4
       with:
         path: /sample.txt
         key: ${{ runner.os }}-${{ matrix.python }}-sample
