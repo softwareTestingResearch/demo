@@ -71,3 +71,14 @@ commit: https://github.com/softwareTestingResearch/demo/commit/a92d91877039119a1
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8106125506/job/22155544341
 result: works, save cache anyway
 
+## check if save cache proceed even if there's failed tests with if always and break cache to restore/save
+
+round 1
+commit: https://github.com/softwareTestingResearch/demo/commit/9d7dd3fbe8c11cfc2d762d24579b117a28fb7d20
+run: https://github.com/softwareTestingResearch/demo/actions/runs/8106340982
+
+round 2
+commit: 
+run:
+
+result: works
