@@ -109,3 +109,10 @@ result: yes, check test result for test_random.py
 
 ## check if workflow run trigger afetr sync fork to a forked repo
 
+commit: https://github.com/wnfewwfwefwef/demo/commit/dff4301234acce6b03640894418cae88d9cf9a57
+run: https://github.com/wnfewwfwefwef/demo/actions/runs/8114818332/job/22181324945
+result: yes, it runs workflow when 1 commit is sync
+
+
+
+## check if change based technique works
