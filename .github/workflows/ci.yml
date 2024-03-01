@@ -33,8 +33,8 @@ jobs:
     - name: Generate sample.txt
       run: echo 'this is an apple' >> /sample.txt
     - name: Cache sample.txt
-    id: cache-sample-cache
-    uses: action/cache@v4
+      id: cache-sample-cache
+      uses: action/cache@v4
       with:
         path: /sample.txt
         key: ${{ runner.os }}-${{ matrix.python }}-sample
