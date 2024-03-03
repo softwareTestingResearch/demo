@@ -7,6 +7,7 @@ Tips:
 Notes:
 - if two commits are too close to each other, e.g., A then B. then running tcp for B won't necessarily be using A's cache because by the time 
 B's workflow starts, A might not finish yet.
+- a workflow that pushes code often will not trigger a workflow that is triggered on 'push' to run, https://docs.github.com/en/actions/using-workflows/triggering-a-workflow#triggering-a-workflow-from-a-workflow
 
 ## checking if qtf works without passing pytest cache across workflow 
 
@@ -125,4 +126,5 @@ commit: https://github.com/wnfewwfwefwef/demo/commit/59f5b25eeb3fd65489560a92945
 commit: https://github.com/softwareTestingResearch/demo/commit/7bac76fd8c8e584ddb453dba0b863875b4e01be9
 run: https://github.com/softwareTestingResearch/demo/actions/runs/8115238492/job/22182668466
 result: works, see order for test_source_a.py
+
 
