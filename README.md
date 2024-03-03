@@ -128,3 +128,4 @@ run: https://github.com/softwareTestingResearch/demo/actions/runs/8115238492/job
 result: works, see order for test_source_a.py
 
 
+## check if change in ci.yml proprogates to fork' ci.yml
